@@ -1,10 +1,10 @@
 // Importing necessary modules and styles
 "use client";
-import { useEffect, useRef, useState } from "react";
+// import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { auth } from "../fb";
-import { useRouter } from "next/navigation";
-import { isSupported, getAnalytics } from "firebase/analytics";  // Import analytics module
+// import { auth } from "../fb";
+// import { useRouter } from "next/navigation";
+// import { isSupported, getAnalytics } from "firebase/analytics";  // Import analytics module
 
 // Login component
 const Login = () => {
@@ -84,7 +84,7 @@ const Login = () => {
               className="inptfrm2 border border-slate-400 p-3"
               type="password"
               placeholder="Password"
-            //   ref={passwordRef}
+            
               required
             />
           </label>
