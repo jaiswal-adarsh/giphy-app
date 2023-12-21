@@ -1,27 +1,30 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import {getAuth} from "firebase/auth" ;
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAnalytics, isSupported } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyATrCKE47E6TNBYqR1juNqtUIXSrRxIviE",
-  authDomain: "app-gif.firebaseapp.com",
-  projectId: "app-gif",
-  storageBucket: "app-gif.appspot.com",
-  messagingSenderId: "802553462038",
-  appId: "1:802553462038:web:1b14ef47b057ec3fd26437",
-  measurementId: "G-2SSHMX9B3S"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID",
 };
 
-// Initialize Firebase
+// Initialize Firebase app
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-export const auth=getAuth ( app) ;
 
-export default function(){<>Nothing is here!</>}
+// Check if Firebase Analytics is supported and the window object is defined
+if (isSupported(getAnalytics()) && typeof window !== "undefined") {
+  // Initialize Firebase Analytics
+  const analytics = getAnalytics(app);
+}
 
+// Export other Firebase modules
+export const auth = getAuth(app);
 
-
+export default function () {
+  return <>Nothing is here!</>;
+}

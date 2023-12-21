@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { auth } from "../fb";
 import { useRouter } from "next/navigation";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { isSupported, getAnalytics } from "firebase/analytics";  // Import analytics module
 
 // Login component
 const Login = () => {
@@ -50,6 +50,12 @@ const Login = () => {
         alert("Login failed: Invalid Credentials");
       });
   };
+
+  // Check if the window object is defined (browser environment)
+  const isBrowser = typeof window !== 'undefined';
+
+  // Check if Firebase Analytics is supported in the current environment
+  const isAnalyticsSupported = isBrowser && isSupported(getAnalytics());
 
   // Render the Login component
   return (
