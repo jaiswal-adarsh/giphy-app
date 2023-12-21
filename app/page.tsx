@@ -1,10 +1,16 @@
-import Image from 'next/image'
+// Importing necessary modules and components
+"use client";
 
-export default function Home() {
+import Login from "./login/page";
+
+// Pages component
+const Pages = () => {
   return (
     <div>
-      <h1>Main Page</h1>
-      hii Adarsh
+      {/* Render the Login component */}
+      <Login />
     </div>
-  )
-}
+  );
+};
+
+export default Pages;
